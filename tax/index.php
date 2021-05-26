@@ -38,7 +38,7 @@
             $ssf = round(($monetaryAmmount * 4 ) /100 ,2);
 
         }
-        $finalAmount = round($monetaryAmmount - $taxAmount, 2);
+        $finalAmount = round($monetaryAmmount - $taxAmount-$ssf, 2);
     ?>
 
     <div class="content">
@@ -57,8 +57,7 @@
             <label>Tax free</label>
             <input type="checkbox"><br>
             <br><label>Month/Year</label><br>
-              <input type="radio" id="year" name="date" <?php if (isset($date) && $date=="year") echo "done";?>
-              value="year" required>
+              <input type="radio" id="year" name="date" value="year" required>
                  <label fo
                  r="male">year</label><br>
                 <input type="radio" id="month" name="date" value="month" required>
@@ -79,16 +78,17 @@
                     <?=$taxAmount ?>
                 </span>
             </p>
+             <p>social security fee: 
+                <span id="ssf">
+                    <?=$ssf ?> 
+                </span>
+            </p>
             <p>Final Ammount: 
                 <span id="finalAmmount">
                     <?=$finalAmount ?> 
                 </span>
             </p>
-            <p>social security fee: 
-                <span id="ssf">
-                    <?=$ssf ?> 
-                </span>
-            </p>
+           
         </div>
     </div>
 </body>
