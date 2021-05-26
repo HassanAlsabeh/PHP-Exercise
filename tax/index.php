@@ -57,7 +57,8 @@
             <label>Tax free</label>
             <input type="checkbox"><br>
             <br><label>Month/Year</label><br>
-              <input type="radio" id="year" name="date" value="year" required>
+              <input type="radio" id="year" name="date" <?php if (isset($date) && $date=="year") echo "done";?>
+              value="year" required>
                  <label fo
                  r="male">year</label><br>
                 <input type="radio" id="month" name="date" value="month" required>
